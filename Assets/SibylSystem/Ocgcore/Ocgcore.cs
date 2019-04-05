@@ -1302,6 +1302,7 @@ public class Ocgcore : ServantWithCardDescription
                 logicalClearChain();
                 surrended = false;
                 Program.I().room.duelEnded = false;
+                Program.I().room.joinWithReconnect = false;
                 turns = 0;
                 deckReserved = false;
                 keys.Insert(0, currentMessageIndex);
@@ -8818,6 +8819,7 @@ public class Ocgcore : ServantWithCardDescription
 
     public void onDuelResultConfirmed()
     {
+        Program.I().room.joinWithReconnect = false;
 
         if (Program.I().room.duelEnded == true || surrended || TcpHelper.tcpClient == null || TcpHelper.tcpClient.Connected == false)
         {
