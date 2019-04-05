@@ -389,7 +389,7 @@ public class Room : WindowServantSP
         Program.I().ocgcore.surrended = false;
         Program.I().ocgcore.returnServant = Program.I().deckManager;
         needSide = true;
-        if(joinWithReconnect) { //Change side when reconnect
+        if(Program.I().ocgcore.condition != Ocgcore.Condition.duel || joinWithReconnect) { //Change side when reconnect
             Program.I().ocgcore.onDuelResultConfirmed();
         }
     }
