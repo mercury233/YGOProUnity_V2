@@ -1366,7 +1366,7 @@ public class Ocgcore : ServantWithCardDescription
                 gameField.currentPhase = GameField.ph.dp;
                 result = duelResult.disLink;
                 deckReserved = false;
-                isFirst = true;
+                //isFirst = true;
                 gameInfo.swaped = false;
                 logicalClearChain();
                 surrended = false;
@@ -8816,7 +8816,7 @@ public class Ocgcore : ServantWithCardDescription
 
     public Dictionary<int, int> sideReference = new Dictionary<int, int>();
 
-    void onDuelResultConfirmed()
+    public void onDuelResultConfirmed()
     {
 
         if (Program.I().room.duelEnded == true || surrended || TcpHelper.tcpClient == null || TcpHelper.tcpClient.Connected == false)
